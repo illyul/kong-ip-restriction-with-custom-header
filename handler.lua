@@ -52,9 +52,6 @@ end
 
 function IpRestrictionHandler:access(conf)
   local block = false
-  --local binary_remote_addr = ngx.var.binary_remote_addr
-  --local binary_remote_addr = ngx.var.http_http_client_ip
-  --print(ngx.var.http_http_client_ip)
   local match = false
   for _, header in ipairs(conf.client_ip_headers) do
     local header_value = kong.request.get_header(header)
